@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Documents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="wrap">
+        <header class="hero">
+            <div>
+                <h1>Documents to collect when you resign</h1>
+                <p class="status" id="status" aria-live="polite">0 of 19 collected</p>
+            </div>
+            <div class="ring" role="img" aria-label="Collection progress">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="ring-bg" cx="60" cy="60" r="52" />
+                    <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52" pathLength="100" />
+                </svg>
+                <span class="ring-pct" id="pct">0%</span>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="filters" role="group" aria-label="Filter documents">
+                <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+                <button class="chip" data-filter="pending" aria-pressed="false">Pending</button>
+                <button class="chip" data-filter="done" aria-pressed="false">Collected</button>
+            </div>
+            <button class="reset" id="reset" type="button">Clear all ticks</button>
+        </div>
+
+        <ul class="docs" id="docs" data-filter="all">
+            <li class="doc" data-id="acceptance">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Resignation acceptance letter or email</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Proof that the company accepted your resignation and agreed your last working day. Use it if the relieving letter is delayed.</p></div>
+            </li>
+            <li class="doc" data-id="relieving">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Relieving letter</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Official proof that you’ve been relieved from your duties and your resignation is accepted.</p></div>
+            </li>
+            <li class="doc" data-id="experience">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Experience certificate</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Shows your job title, duration of employment, and sometimes a brief on your role.</p></div>
+            </li>
+            <li class="doc" data-id="form16">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Form 16 (Part A and Part B)</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Issued by the employer for tax filing. It shows the total salary and tax deductions. Make sure you get both parts.</p></div>
+            </li>
+            <li class="doc" data-id="fnf">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Full and final settlement (F&amp;F)</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Details the full and final payment calculation including salary, bonus, leave encashment, etc.</p></div>
+            </li>
+            <li class="doc" data-id="salary">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Salary slips (last 3–6 months)</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Official proof of your salary payments for recent months.</p></div>
+            </li>
+            <li class="doc" data-id="pf">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Provident Fund (PF) details</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Useful for applying for loans or future employment. Includes your PF account number, UAN and last contribution details. Confirm your PF is transferred to your new employer (Form 13) rather than withdrawn.</p></div>
+            </li>
+            <li class="doc" data-id="noc">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">No Objection Certificate (NOC)</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Confirms that you’ve returned company assets and cleared all dues. Required for background checks.</p></div>
+            </li>
+            <li class="doc" data-id="nda">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">NDA / exit agreement</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Legal document related to confidentiality or any post-exit obligations. Keep it for your records.</p></div>
+            </li>
+            <li class="doc" data-id="medical">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Medical or insurance records</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>If you had corporate health insurance, keep documents related to policy closure or transfer.</p></div>
+            </li>
+            <li class="doc" data-id="offer">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Offer, appointment and increment/promotion letters</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>New employers often ask for these during background verification. Collect copies of all of them in one go.</p></div>
+            </li>
+            <li class="doc" data-id="buyout">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Notice period waiver or buyout letter</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>If you’re leaving before your full notice period ends, get the waiver or buyout terms in writing.</p></div>
+            </li>
+            <li class="doc" data-id="bond">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Service agreement or bond clearance letter</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>If you signed a training or service bond, get written confirmation that it’s closed.</p></div>
+            </li>
+            <li class="doc" data-id="bonus">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Joining or retention bonus clearance</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>If you received a joining bonus, get written confirmation that no clawback is due.</p></div>
+            </li>
+            <li class="doc" data-id="equity">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">ESOP, RSU or NPS statements</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>If the company gave you any equity or NPS contributions, collect the latest statements.</p></div>
+            </li>
+            <li class="doc" data-id="gratuity">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Gratuity details</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Applies only if you’ve completed 5 years with the company.</p></div>
+            </li>
+            <li class="doc" data-id="training">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Training and certification certificates</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Copies of any certificates issued by the company.</p></div>
+            </li>
+            <li class="doc" data-id="hrcontact">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">Employment verification contact</span><span class="tag">If applicable</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>The HR email or phone number future employers should use to verify your employment.</p></div>
+            </li>
+            <li class="doc" data-id="references">
+                <label class="check"><input type="checkbox"><span class="box"></span><span class="name">References</span></label>
+                <button class="toggle" type="button" aria-expanded="false" aria-label="Show details"></button>
+                <div class="more"><p>Gather references and contact information for future verification or re-employment.</p></div>
+            </li>
+        </ul>
+        <p class="empty" id="empty" hidden>Nothing to show here. Pick another filter.</p>
+    </main>
+
+    <footer>© All rights reserved by Sai Krishna. All the best for your future.</footer>
+    <script src="./required.js"></script>
+</body>
+</html>
